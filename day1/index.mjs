@@ -1,6 +1,19 @@
 import { readFile } from 'node:fs/promises';
 import { resolve } from 'node:path';
 
+const digitsMap = {
+  zero: 0,
+  one: 1,
+  two: 2,
+  three: 3,
+  four: 4,
+  five: 5,
+  six: 6,
+  seven: 7,
+  eight: 8,
+  nine: 9,
+}
+
 const getStrings = async (relativePath) => {
   const filePath = resolve(relativePath);
   const data = await readFile(filePath, { encoding: 'utf8' });
